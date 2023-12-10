@@ -38,6 +38,7 @@ struct FeedView: View {
                     } label: {
                         Image(systemName: "paperplane")
                             .imageScale(.large)
+                            .foregroundColor(Color.black)
                     }
                 }
             }
