@@ -25,7 +25,7 @@ struct FeedView: View {
                     Button {
                         
                     } label: {
-                        Image(systemName: "instagram")
+                        Image("instagram")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100, height: 32)
