@@ -12,6 +12,8 @@
 		C94479E92B25FB9200A74C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94479E82B25FB9200A74C49 /* Assets.xcassets */; };
 		C94479EC2B25FB9200A74C49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94479EB2B25FB9200A74C49 /* Preview Assets.xcassets */; };
 		C94479FF2B25FE4200A74C49 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94479FE2B25FE4200A74C49 /* MainTabView.swift */; };
+		C96F57342B26031100B7C5F4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F57332B26031100B7C5F4 /* ProfileView.swift */; };
+		C96F57372B260B9900B7C5F4 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F57362B260B9900B7C5F4 /* ComponentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		C94479E82B25FB9200A74C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C94479EB2B25FB9200A74C49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C94479FE2B25FE4200A74C49 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C96F57332B26031100B7C5F4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C96F57362B260B9900B7C5F4 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C94479F72B25FC3C00A74C49 /* Authintication */,
+				C96F57352B260B7F00B7C5F4 /* Components */,
 				C94479F82B25FC5E00A74C49 /* Feed */,
 				C94479F92B25FC6F00A74C49 /* Profile */,
 				C94479FA2B25FC7F00A74C49 /* Root */,
@@ -133,6 +138,7 @@
 		C94479F92B25FC6F00A74C49 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C96F57332B26031100B7C5F4 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -164,6 +170,14 @@
 			children = (
 			);
 			path = UploadPost;
+			sourceTree = "<group>";
+		};
+		C96F57352B260B7F00B7C5F4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C96F57362B260B9900B7C5F4 /* ComponentsView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F57372B260B9900B7C5F4 /* ComponentsView.swift in Sources */,
+				C96F57342B26031100B7C5F4 /* ProfileView.swift in Sources */,
 				C94479E72B25FB9000A74C49 /* ContentView.swift in Sources */,
 				C94479E52B25FB9000A74C49 /* InstagramApp.swift in Sources */,
 				C94479FF2B25FE4200A74C49 /* MainTabView.swift in Sources */,
