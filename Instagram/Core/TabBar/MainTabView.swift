@@ -30,7 +30,7 @@ struct MainTabView: View {
                     Image(systemName: "heart")
                 }
             
-            CurrentUserProfileView()
+            CurrentUserProfileView(user: User.Mock_Users[0])
                 .tabItem {
                     Image(systemName: "person")
                 }
