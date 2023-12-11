@@ -13,16 +13,18 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             ScrollView{
-                ForEach(0 ... 20, id: \.self){ user in
+                ForEach(User.Mock_Users){ user in
                     HStack{
-                        Image(systemName: "person")
+                        Image(user.profileImageUrl ?? "")
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .frame(width: 40, height: 40)
-                        VStack(spacing: 8) {
-                            Text("Person")
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading) {
+                            Text(user.username)
                                 .fontWeight(.semibold)
-                            Text("This is bio")
+                            Text(user.fullname ?? "")
                         }
                         .font(.footnote)
                         Spacer()
