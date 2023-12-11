@@ -18,6 +18,11 @@
 		C96F57372B260B9900B7C5F4 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F57362B260B9900B7C5F4 /* ComponentsView.swift */; };
 		C96F57392B2615CA00B7C5F4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F57382B2615C900B7C5F4 /* FeedView.swift */; };
 		C96F573B2B2615E000B7C5F4 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F573A2B2615E000B7C5F4 /* FeedCell.swift */; };
+		C9884BE82B27520D00AC9CEE /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BE72B27520D00AC9CEE /* AddEmailView.swift */; };
+		C9884BEA2B2752D500AC9CEE /* IGTextfieldModifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BE92B2752D500AC9CEE /* IGTextfieldModifire.swift */; };
+		C9884BEC2B27587D00AC9CEE /* UsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BEB2B27587D00AC9CEE /* UsernameView.swift */; };
+		C9884BEE2B275AF100AC9CEE /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BED2B275AF100AC9CEE /* PasswordView.swift */; };
+		C9884BF02B275D7700AC9CEE /* CompleteSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BEF2B275D7700AC9CEE /* CompleteSignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		C96F57362B260B9900B7C5F4 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		C96F57382B2615C900B7C5F4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		C96F573A2B2615E000B7C5F4 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		C9884BE72B27520D00AC9CEE /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
+		C9884BE92B2752D500AC9CEE /* IGTextfieldModifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextfieldModifire.swift; sourceTree = "<group>"; };
+		C9884BEB2B27587D00AC9CEE /* UsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameView.swift; sourceTree = "<group>"; };
+		C9884BED2B275AF100AC9CEE /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		C9884BEF2B275D7700AC9CEE /* CompleteSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				C9001E342B2648750077A953 /* LoginView.swift */,
+				C9884BE72B27520D00AC9CEE /* AddEmailView.swift */,
+				C9884BEB2B27587D00AC9CEE /* UsernameView.swift */,
+				C9884BED2B275AF100AC9CEE /* PasswordView.swift */,
+				C9884BEF2B275D7700AC9CEE /* CompleteSignupView.swift */,
 			);
 			path = Authintication;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C96F57362B260B9900B7C5F4 /* ComponentsView.swift */,
+				C9884BE92B2752D500AC9CEE /* IGTextfieldModifire.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -262,12 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9884BEC2B27587D00AC9CEE /* UsernameView.swift in Sources */,
 				C96F573B2B2615E000B7C5F4 /* FeedCell.swift in Sources */,
 				C96F57372B260B9900B7C5F4 /* ComponentsView.swift in Sources */,
 				C96F57342B26031100B7C5F4 /* ProfileView.swift in Sources */,
+				C9884BEE2B275AF100AC9CEE /* PasswordView.swift in Sources */,
 				C9001E352B2648750077A953 /* LoginView.swift in Sources */,
+				C9884BE82B27520D00AC9CEE /* AddEmailView.swift in Sources */,
 				C94479E72B25FB9000A74C49 /* ContentView.swift in Sources */,
 				C9001E332B2643710077A953 /* SearchView.swift in Sources */,
+				C9884BF02B275D7700AC9CEE /* CompleteSignupView.swift in Sources */,
+				C9884BEA2B2752D500AC9CEE /* IGTextfieldModifire.swift in Sources */,
 				C94479E52B25FB9000A74C49 /* InstagramApp.swift in Sources */,
 				C96F57392B2615CA00B7C5F4 /* FeedView.swift in Sources */,
 				C94479FF2B25FE4200A74C49 /* MainTabView.swift in Sources */,
