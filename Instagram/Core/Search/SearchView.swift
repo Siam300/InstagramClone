@@ -14,26 +14,32 @@ struct SearchView: View {
         NavigationStack {
             ScrollView{
                 ForEach(User.Mock_Users){ user in
-                    HStack{
-                        Image(user.profileImageUrl ?? "")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                        
-                        VStack(alignment: .leading) {
-                            Text(user.username)
-                                .fontWeight(.semibold)
-                            Text(user.fullname ?? "")
+                    NavigationLink(value: user) {
+                        HStack{
+                            Image(user.profileImageUrl ?? "")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading) {
+                                Text(user.username)
+                                    .fontWeight(.semibold)
+                                Text(user.fullname ?? "")
+                            }
+                            .font(.footnote)
+                            Spacer()
                         }
-                        .font(.footnote)
-                        Spacer()
+                        .foregroundColor(Color.black)
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
                 }
                 .padding(.top, 8)
                 .searchable(text: $searchText, prompt: "Search")
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }

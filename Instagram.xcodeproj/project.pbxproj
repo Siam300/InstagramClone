@@ -24,6 +24,7 @@
 		C9884BEE2B275AF100AC9CEE /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BED2B275AF100AC9CEE /* PasswordView.swift */; };
 		C9884BF02B275D7700AC9CEE /* CompleteSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BEF2B275D7700AC9CEE /* CompleteSignupView.swift */; };
 		C9884BF22B27676900AC9CEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BF12B27676900AC9CEE /* User.swift */; };
+		C9884BF42B2770A000AC9CEE /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9884BF32B2770A000AC9CEE /* CurrentUserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C9884BED2B275AF100AC9CEE /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		C9884BEF2B275D7700AC9CEE /* CompleteSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignupView.swift; sourceTree = "<group>"; };
 		C9884BF12B27676900AC9CEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9884BF32B2770A000AC9CEE /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C96F57332B26031100B7C5F4 /* ProfileView.swift */,
+				C9884BF32B2770A000AC9CEE /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				C96F57372B260B9900B7C5F4 /* ComponentsView.swift in Sources */,
 				C96F57342B26031100B7C5F4 /* ProfileView.swift in Sources */,
 				C9884BEE2B275AF100AC9CEE /* PasswordView.swift in Sources */,
+				C9884BF42B2770A000AC9CEE /* CurrentUserProfileView.swift in Sources */,
 				C9001E352B2648750077A953 /* LoginView.swift in Sources */,
 				C9884BE82B27520D00AC9CEE /* AddEmailView.swift in Sources */,
 				C94479E72B25FB9000A74C49 /* ContentView.swift in Sources */,
