@@ -38,6 +38,7 @@
 		C9ECE67C2B28B10C00DECBC1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECE67B2B28B10C00DECBC1 /* AuthService.swift */; };
 		C9ECE6832B28B55500DECBC1 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECE6822B28B55500DECBC1 /* ContentViewModel.swift */; };
 		C9ECE6852B28CB8100DECBC1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECE6842B28CB8100DECBC1 /* RegistrationViewModel.swift */; };
+		C9ECE6872B28DB9A00DECBC1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECE6862B28DB9A00DECBC1 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		C9ECE67B2B28B10C00DECBC1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C9ECE6822B28B55500DECBC1 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		C9ECE6842B28CB8100DECBC1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		C9ECE6862B28DB9A00DECBC1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				C9ECE6842B28CB8100DECBC1 /* RegistrationViewModel.swift */,
+				C9ECE6862B28DB9A00DECBC1 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				C9001E352B2648750077A953 /* LoginView.swift in Sources */,
 				C9884BF82B2796A100AC9CEE /* PostGridView.swift in Sources */,
 				C9ECE6832B28B55500DECBC1 /* ContentViewModel.swift in Sources */,
+				C9ECE6872B28DB9A00DECBC1 /* LoginViewModel.swift in Sources */,
 				C9ECE6852B28CB8100DECBC1 /* RegistrationViewModel.swift in Sources */,
 				C90EE1872B2894FE00CE79D7 /* UploadPostViewModel.swift in Sources */,
 				C9884BE82B27520D00AC9CEE /* AddEmailView.swift in Sources */,
