@@ -44,13 +44,15 @@ struct ProfileHeaderView: View {
             Button {
                 
             } label: {
-                Text("Follow")
+                Text("Edit Profile")
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.white)
                     .frame(width: 360, height: 32)
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                    .foregroundColor(Color.black)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color.gray, lineWidth: 1)
+                    }
             }
             Divider()
         }
