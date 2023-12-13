@@ -15,17 +15,21 @@ struct ProfileHeaderView: View {
         VStack(spacing: 10){
             //Pic and Stats
             HStack(spacing: 10){
-                Image(user.profileImageUrl ?? "")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
+                CircularImageProfileView(user: user, size: .large)
                 
-                ComponentsView(value: 1, title: "Posts")
+                Spacer()
                 
-                ComponentsView(value: 2, title: "Following")
-                
-                ComponentsView(value: 3, title: "Followers")
+                HStack {
+                    
+                    
+                    ComponentsView(value: 1, title: "Posts")
+                    
+                    ComponentsView(value: 2, title: "Following")
+                    
+                    ComponentsView(value: 3, title: "Followers")
+                }
             }
+            .padding(.horizontal)
             
             //name and bio
             VStack(alignment: .leading, spacing: 4){
