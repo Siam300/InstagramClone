@@ -12,10 +12,12 @@ struct Post: Identifiable, Hashable, Codable {
     let id: String
     let ownerUid: String
     let caption: String
-    let likes: Int
+    var likes: Int
     let imageUrl: String
     let timeStrap: Timestamp
     var user: User?
+    
+    var didLike: Bool? = false
 }
 
 extension Post {
