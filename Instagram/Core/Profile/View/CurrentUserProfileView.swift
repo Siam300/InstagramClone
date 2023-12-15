@@ -9,10 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     let user: User
-    var posts: [Post] {
-        return Post.Mock_Post.filter({ $0.user?.username == user.username
-        })
-    }
+
     private let imageDimention = (UIScreen.main.bounds.width / 3) - 1
     
     var body: some View {
@@ -24,7 +21,7 @@ struct CurrentUserProfileView: View {
                     
                     //postgrid
                     
-                    PostGridView(posts: posts)
+                    PostGridView(user: user)
                 }
             }
             .navigationTitle("Profile")
