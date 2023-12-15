@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 import PhotosUI
 import Firebase
-import FirebaseFirestore
 
 @MainActor
 

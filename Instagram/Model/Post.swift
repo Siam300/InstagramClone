@@ -16,7 +16,6 @@ struct Post: Identifiable, Hashable, Codable {
     let imageUrl: String
     let timeStrap: Timestamp
     var user: User?
-    
 }
 
 extension Post {

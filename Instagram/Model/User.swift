@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 struct User: Identifiable, Hashable, Codable {
     let id: String
