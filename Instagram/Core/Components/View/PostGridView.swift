@@ -27,7 +27,7 @@ struct PostGridView: View {
             ForEach(viewModel.posts) { post in
                 KFImage(URL(string: post.imageUrl))
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: imageDimention, height: imageDimention)
                     .clipped()
             }
