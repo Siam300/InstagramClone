@@ -11,6 +11,9 @@ struct CommentsView: View {
     @State private var commentText = ""
     @StateObject var viewModel: CommentsViewModel
     
+    private var currentUser: User? {
+        return UserService.shared.currentUser
+    }
     
     init(post: Post) {
         self._viewModel = StateObject(wrappedValue: CommentsViewModel(post: post))
@@ -37,7 +40,7 @@ struct CommentsView: View {
             Divider()
             
             HStack(spacing: 12) {
-                CircularImageProfileView(user: User.Mock_Users[0], size: .xSmall)
+                CircularImageProfileView(user: currentUser, size: .xSmall)
                 
                 ZStack(alignment: .trailing) {
                     TextField("Add comment...", text: $commentText, axis: .vertical)

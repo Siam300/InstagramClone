@@ -106,7 +106,7 @@ struct FeedCell: View {
         }
         .sheet(isPresented: $showComments, content: {
             CommentsView(post: post)
-                 .presentationDragIndicator(.visible)
+                 .presentationDragIndicator(.visible) //dont know why indicator isnt showing in app
         })
     }
     
