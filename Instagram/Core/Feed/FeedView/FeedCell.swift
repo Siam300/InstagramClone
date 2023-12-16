@@ -10,6 +10,7 @@ import Kingfisher
 
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
+    @State private var showComments = false
     
     private var post: Post {
         return viewModel.post
@@ -42,7 +43,7 @@ struct FeedCell: View {
             //Post Image
             KFImage(URL(string: post.imageUrl))
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(height: 400)
                 .clipShape(Rectangle())
             
@@ -57,7 +58,7 @@ struct FeedCell: View {
                 }
                 
                 Button {
-                    
+                    showComments.toggle()
                 } label: {
                     Image(systemName: "bubble.right")
                 }
@@ -73,15 +74,17 @@ struct FeedCell: View {
             }
             .foregroundColor(Color.black)
             .padding(.top, 4)
-            .padding(.leading)
+            .padding(.leading, 8)
             
             //likes lavel
-            Text("\(post.likes) Likes")
-                .fontWeight(.semibold)
-                .font(.footnote)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 10)
-                .padding(.top, 1)
+            if post.likes > 0 {
+                Text("\(post.likes) Likes")
+                    .fontWeight(.semibold)
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 10)
+                    .padding(.top, 1)
+            }
                 
             //caption lavel
             HStack {
@@ -101,6 +104,10 @@ struct FeedCell: View {
                 .padding(.leading, 10)
                 .padding(.top, 1)
         }
+        .sheet(isPresented: $showComments, content: {
+            CommentsView(post: post)
+                 .presentationDragIndicator(.visible)
+        })
     }
     
     private func handleLikeTapped() {
