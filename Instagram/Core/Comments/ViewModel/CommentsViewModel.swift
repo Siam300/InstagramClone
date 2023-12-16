@@ -30,8 +30,8 @@ class CommentsViewModel: ObservableObject {
                                     timestamp: Timestamp(),
                                     commentOwnerId: uid)
         
-        self.comments.insert(comment, at: 0)
         try await service.uploadComment(comment)
+        try await fetchComments()
     }
     
     func fetchComments() async throws {

@@ -20,7 +20,7 @@ struct CommentService {
             .collection("posts")
             .document(postId)
             .collection("post-comment")
-            .addDocument(data: commentData) //error: Result of call to 'addDocument(data:)' is unused
+            .addDocument(data: commentData) 
     }
     
     func fetchComments() async throws -> [CommentModel] {
