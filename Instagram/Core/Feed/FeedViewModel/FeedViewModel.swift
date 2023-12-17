@@ -19,5 +19,6 @@ class FeedViewModel: ObservableObject {
     @MainActor
     func fetchPosts() async throws {
         self.posts = try await PostService.fetchFeedPosts()
+        
     }
 }

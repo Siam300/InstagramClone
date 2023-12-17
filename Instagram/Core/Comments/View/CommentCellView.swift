@@ -21,7 +21,7 @@ struct CommentCellView: View {
                 HStack(spacing: 2) {
                     Text(user?.username ?? "")
                         .fontWeight(.semibold)
-                    Text("2d ")
+                    Text(comment.timestamp.timestampString())
                         .foregroundColor(Color.gray)
                 }
                 Text(comment.commentText)
