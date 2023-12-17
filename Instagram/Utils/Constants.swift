@@ -5,4 +5,15 @@
 //  Created by Auto on 12/17/23.
 //
 
-import Foundation
+import Firebase
+
+struct FireBaseConstants {
+    static let Root = Firestore.firestore()
+    
+    static let UsersCollection = Root.collection("users")
+    
+    static let PostsCollection = Root.collection("posts")
+    
+    static let FollowingCollection = Root.collection("following")
+    static let FollowersCollection = Root.collection("followers")
+}

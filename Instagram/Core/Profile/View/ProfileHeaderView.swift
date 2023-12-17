@@ -51,6 +51,10 @@ struct ProfileHeaderView: View {
         }
     }
     
+    private var stats: UserStats {
+        return user.stats ?? .init(followinCount: 0, followersCount: 0, postsCount: 0)
+    }
+    
     init(user: User) {
         self.viewModel = ProfileViewModel(user: user)
     }
@@ -64,11 +68,11 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack {
-                    ComponentsView(value: 1, title: "Posts")
+                    ComponentsView(value: stats.postsCount, title: "Posts")
                     
-                    ComponentsView(value: 2, title: "Following")
+                    ComponentsView(value: stats.followersCount, title: "Followers")
                     
-                    ComponentsView(value: 3, title: "Followers")
+                    ComponentsView(value: stats.followinCount, title: "Following")
                 }
             }
             .padding(.horizontal)

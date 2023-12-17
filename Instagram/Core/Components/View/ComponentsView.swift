@@ -21,6 +21,7 @@ struct ComponentsView: View {
             Text(title)
                 .font(.footnote)
         }
+        .opacity(value == 0 ? 0.5 : 1.0)
         .frame(width: 76)
     }
 }
