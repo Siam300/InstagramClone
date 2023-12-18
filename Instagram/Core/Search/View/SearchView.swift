@@ -13,27 +13,7 @@ struct SearchView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView{
-                ForEach(viewModel.users){ user in
-                    NavigationLink(value: user) {
-                        HStack{
-                            CircularImageProfileView(user: user, size: .xSmall)
-                            
-                            VStack(alignment: .leading) {
-                                Text(user.username)
-                                    .fontWeight(.semibold)
-                                Text(user.fullname ?? "")
-                            }
-                            .font(.footnote)
-                            Spacer()
-                        }
-                        .foregroundColor(Color.black)
-                        .padding(.horizontal)
-                    }
-                }
-                .padding(.top, 8)
-                .searchable(text: $searchText, prompt: "Search")
-            }
+            UserListView(config: .explore)
             .navigationDestination(for: User.self, destination: { user in
                 ProfileView(user: user)
             })

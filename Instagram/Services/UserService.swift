@@ -14,7 +14,7 @@ class UserService {
     static let shared = UserService()
     
     
-    //Mark: - Fetch Data
+//Mark: - Fetch Data
     
     @MainActor
     func fetchCurrentUser() async throws {
@@ -35,6 +35,53 @@ class UserService {
         let snapshot = try await Firestore.firestore().collection("users").getDocuments()
         
         return snapshot.documents.compactMap({ try? $0.data(as: User.self) })
+    }
+    
+    static func fetchUsers(forConfig config: UserListConfig) async throws -> [User] {
+        switch config {
+        case .followers(let uid):
+            return try await fetchFollowers(uid: uid)
+        case .following(let uid):
+            return try await fetchFollowing(uid: uid)
+        case .likes(let postId):
+            return try await fetchPostLikesUsers(postId: postId)
+        case .explore:
+            return try await fetchAllUsers()
+        }
+    }
+    
+    private static func fetchFollowers(uid: String) async throws -> [User] {
+        let snapshot = try await FireBaseConstants
+            .FollowersCollection
+            .document(uid)
+            .collection("user-followers")
+            .getDocuments()
+        
+        return try await fetchUsers(snapshot)
+    }
+    
+    private static func fetchFollowing(uid: String) async throws -> [User] {
+        let snapshot = try await FireBaseConstants
+            .FollowingCollection
+            .document(uid)
+            .collection("user-following")
+            .getDocuments()
+        
+        return try await fetchUsers(snapshot)
+    }
+    
+    private static func fetchPostLikesUsers(postId: String) async throws -> [User] {
+        return []
+    }
+    
+    private static func fetchUsers(_ snapshot: QuerySnapshot) async throws -> [User] {
+        var users = [User]()
+        
+        for doc in snapshot.documents {
+            users.append(try await fetchUser(withUiD: doc.documentID))
+        }
+        
+        return users
     }
 }
 
@@ -95,26 +142,26 @@ extension UserService {
 
 extension UserService {
     static func fetchUserStats(uid: String) async throws -> UserStats {
-        async let followingSnapshot = try await FireBaseConstants
+        async let followingCount = FireBaseConstants
             .FollowingCollection
             .document(uid)
             .collection("user-following")
             .getDocuments()
-        let followingCount = try await followingSnapshot.count
+            .count
         
-        async let followersSnapshot = try await FireBaseConstants
+        async let followerCount = FireBaseConstants
             .FollowersCollection
             .document(uid)
             .collection("user-followers")
             .getDocuments()
-        let followerCount = try await followersSnapshot.count
+            .count
         
-        async let postSnapshot = try await FireBaseConstants
+        async let postsCount = FireBaseConstants
             .PostsCollection
             .whereField("ownerUid", isEqualTo: uid)
             .getDocuments()
-        let postsCount = try await postSnapshot.count
+            .count
         
-        return .init(followinCount: followingCount, followersCount: followerCount, postsCount: postsCount)
+        return try await .init(followinCount: followingCount, followersCount: followerCount, postsCount: postsCount)
     }
 }
