@@ -10,7 +10,13 @@ import FirebaseFirestore
 
 class NotificationService {
     func fetchNotifications() async throws -> [Notification]{
-        return DeveloperPreview.shared.notifications
+        guard let currentUid = Auth.auth().currentUser?.uid else { return [] }
+        
+        let snapshot = try await FireBaseConstants
+            .UserNotificationCollection(uid: currentUid)
+            .getDocuments()
+        
+        return snapshot.documents.compactMap({ try? $0.data(as: Notification.self) }) 
     }
     
     func uploadNotification(toUid uid: String, type: NotificationType, post: Post? = nil) {
