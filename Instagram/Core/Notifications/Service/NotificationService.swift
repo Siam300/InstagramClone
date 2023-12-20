@@ -28,6 +28,7 @@ class NotificationService {
             .document()
         
         let notification = Notification(id: ref.documentID,
+                                        postId: post?.id,
                                         timestamp: Timestamp(),
                                         notificationSenderUid: currentUid,
                                         type: type)

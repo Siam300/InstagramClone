@@ -11,7 +11,7 @@ struct NotificationView: View {
     @StateObject var viewModel = NotificationViewModel(service: NotificationService())
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 20) {
                     ForEach(viewModel.notifications) { notification in
@@ -20,6 +20,12 @@ struct NotificationView: View {
                     }
                 }
             }
+            .navigationDestination(for: Post.self, destination: { post  in
+                FeedCell(post: post)
+            })
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationBarTitle("Notifications")
             .navigationBarTitleDisplayMode(.inline)
             

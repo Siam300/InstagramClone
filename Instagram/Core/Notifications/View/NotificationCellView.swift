@@ -13,7 +13,9 @@ struct NotificationCellView: View {
     
     var body: some View {
         HStack {
-            CircularImageProfileView(user: notification.user, size: .xSmall)
+            NavigationLink(value: notification.user) {
+                CircularImageProfileView(user: notification.user, size: .xSmall)
+            }
             
             //Notification Message
             HStack {
@@ -32,12 +34,14 @@ struct NotificationCellView: View {
             Spacer()
             
             if notification.type != .follow {
-                KFImage(URL(string: notification.post?.imageUrl ?? ""))
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .scaledToFill()
-                    .clipped()
-                    .padding(.leading, 2)
+                NavigationLink(value: notification.post) {
+                    KFImage(URL(string: notification.post?.imageUrl ?? ""))
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .scaledToFill()
+                        .clipped()
+                        .padding(.leading, 2)
+                }
             } else {
                 Button {
                     print("Follow button pressed from notification view")
