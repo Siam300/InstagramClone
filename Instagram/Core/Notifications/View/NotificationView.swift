@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct NotificationView: View {
+    @StateObject var viewModel = NotificationViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 20) {
-                    ForEach(0 ..< 20) { notifications in
-                        NotificationCellView()
+                    ForEach(viewModel.notifications) { notification in
+                        NotificationCellView(notification: notification)
                             .padding(.top)
                     }
                 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NotificationCellView: View {
+    let notification: Notification
+    
     var body: some View {
         HStack {
             CircularImageProfileView(size: .xSmall)
@@ -18,7 +20,7 @@ struct NotificationCellView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold) +
                 
-                Text("Liked your post. ")
+                Text("\(notification.type.notificationMessage)")
                     .font(.subheadline) +
                 
                 Text("3h")
@@ -28,18 +30,32 @@ struct NotificationCellView: View {
             
             Spacer()
             
-            Image("batman")
-                .resizable()
-                .frame(width: 40, height: 40)
-                .scaledToFill()
-                .clipped()
-                .padding(.leading, 2)
+            if notification.type != .follow {
+                Image("batman")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .scaledToFill()
+                    .clipped()
+                    .padding(.leading, 2)
+            } else {
+                Button {
+                    print("Follow button pressed from notification view")
+                } label: {
+                    Text("Follow")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .frame(width: 88, height: 32)
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                }
+            }
         }
+        .padding(.horizontal)
     }
 }
 
 struct NotificationCellView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationCellView()
+        NotificationCellView(notification: DeveloperPreview.shared.notifications[0])
     }
 }
