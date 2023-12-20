@@ -21,7 +21,7 @@ struct NotificationCellView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold) +
                 
-                Text("\(notification.type.notificationMessage)")
+                Text(" \(notification.type.notificationMessage) ")
                     .font(.subheadline) +
                 
                 Text("\(notification.timestamp.timestampString())")

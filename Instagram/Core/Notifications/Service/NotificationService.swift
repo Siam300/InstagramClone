@@ -24,7 +24,7 @@ class NotificationService {
         let ref = FireBaseConstants
             .NotificationCollection
             .document(uid)
-            .collection("user-notification")
+            .collection("user-notifications")
             .document()
         
         let notification = Notification(id: ref.documentID,

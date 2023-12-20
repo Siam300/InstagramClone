@@ -27,7 +27,7 @@ struct PostService {
     static func fetchUserPosts(uid: String) async throws -> [Post] {
         let snapshot = try await postCollection.whereField("ownerUid", isEqualTo: uid).getDocuments()
         
-        return try snapshot.documents.compactMap({ try $0.data(as: Post.self) })
+        return try snapshot.documents.compactMap({ try $0.data(as: Post.self)})
     }
     
     static func fetchPost(_ postId: String) async throws -> Post {

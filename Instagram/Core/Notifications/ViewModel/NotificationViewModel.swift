@@ -23,7 +23,7 @@ class NotificationViewModel: ObservableObject {
     
     func fetchNotifications() async {
         do {
-            self.notifications = DeveloperPreview.shared.notifications
+            self.notifications = try await service.fetchNotifications()
             try await updateNotification()
         } catch {
             print("Failed to fetch notifications error code: \(error.localizedDescription)")
@@ -31,7 +31,7 @@ class NotificationViewModel: ObservableObject {
     }
     
     private func updateNotification() async throws {
-        for i in 0..<notifications.count {
+        for i in 0 ..< notifications.count {
             var notification = notifications[i]
             
             notification.user = try await UserService.fetchUser(withUiD: notification.notificationSenderUid)
