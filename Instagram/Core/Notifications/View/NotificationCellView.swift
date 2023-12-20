@@ -47,6 +47,7 @@ struct NotificationCellView: View {
                         .frame(width: 88, height: 32)
                         .foregroundColor(Color.white)
                         .background(Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
                 }
             }
         }
